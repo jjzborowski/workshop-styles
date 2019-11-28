@@ -7,20 +7,27 @@
 }
 
 .gallery {
-    max-width: 1040px;
+    display: flex;
+    justify-content: center;
 }
 
 .gallery .gallery__panel {
-    width: 100%;
+    background-color: black;
     display: flex;
-    justify-content: flex-end;
-    padding: 10px 0;
+    justify-content: center;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 .gallery .gallery__container {
     display: flex;
     flex-wrap: wrap;
     border: 1px solid black;
+    margin-top: 65px;
+    max-width: 1040px;
     padding: 5px 0 0 5px;
 }
 
