@@ -1,14 +1,12 @@
-import {
-    FIREBASE_URL,
-    PICSUM_URL,
-} from './constants.js';
+import { FIREBASE_URL } from './constants.js';
 
 export const apiGetImages = async () => {
     try {
         const response = await fetch(FIREBASE_URL + 'images.json');
-        return response.json();
+        return await response.json();
     } catch (error) {
         console.log(error);
+        return null;
     }
 };
 
@@ -18,9 +16,10 @@ export const apiSetImage = async (imageData) => {
             method: 'POST',
             body: JSON.stringify(imageData),
         });
-        return response.json();
+        return await response.json();
     } catch (error) {
         console.log(error);
+        return null;
     }
 };
 
@@ -29,9 +28,10 @@ export const apiRemoveImageById = async (imageId) => {
         const response = await fetch(`${FIREBASE_URL}images/${imageId}.json`, {
             method: 'DELETE',
         });
-        return response.json();
+        return await response.json();
     } catch (error) {
         console.log(error);
+        return null;
     }
 };
 
@@ -40,8 +40,9 @@ export const apiRemoveImages = async () => {
         const response = await fetch(`${FIREBASE_URL}images.json`, {
             method: 'DELETE',
         });
-        return response.json();
+        return await response.json();
     } catch (error) {
         console.log(error);
+        return null;
     }
 };
